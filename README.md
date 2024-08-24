@@ -61,7 +61,7 @@ Here's a simple example of how to use QPL:
             obj_process.execute(data)
             adapt_process.execute(data)
         time.sleep(1)
-
+```
 # Start the program
    ```bash
    thread_link = Thread(target=link_processes, args=(data_gen_process, object_manager_process, adaptive_process))
