@@ -28,28 +28,32 @@ To get started with QPL, you'll need the following:
    cd QuantumProgrammingLanguage
 
 2. Install dependencies: If your project has any dependencies, you should list them here. For example, you can use pip to install them:
-
+   ```bash
 pip install -r requirements.txt
 
 Basic Usage
 Here's a simple example of how to use QPL:
-
+   ```bash
 from qpl import QuantumProgram, DataGeneratorProcess, ObjectManagerProcess, AdaptiveProcess
 
 # Create an instance of QuantumProgram
+   ```bash
 quantum_program = QuantumProgram()
 
 # Initialize processes
+   ```bash
 data_gen_process = DataGeneratorProcess("DataGenerator")
 object_manager_process = ObjectManagerProcess("ObjectManager")
 adaptive_process = AdaptiveProcess("AdaptiveProcess")
 
 # Add processes to the program
+   ```bash
 quantum_program.add_process(data_gen_process)
 quantum_program.add_process(object_manager_process)
 quantum_program.add_process(adaptive_process)
 
 # Link processes (define interactions)
+   ```bash
 def link_processes(gen_process, obj_process, adapt_process):
     while True:
         data = gen_process.state
@@ -59,6 +63,7 @@ def link_processes(gen_process, obj_process, adapt_process):
         time.sleep(1)
 
 # Start the program
+   ```bash
 thread_link = Thread(target=link_processes, args=(data_gen_process, object_manager_process, adaptive_process))
 thread_link.start()
 
